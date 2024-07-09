@@ -1,0 +1,62 @@
+.Accordian{
+    position: relative;
+    top:100px;
+    left:20%;
+    background-color: rgb(46, 234, 46);
+    max-width: 780px;
+    border:2px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+body{
+    background-color: azure;
+}
+
+.accordian__input{
+    display: none; 
+}
+
+.accordian__label,
+.accordian__content{
+    padding: 14px 20px;
+}
+
+.accordian__label:hover{
+    background-color: lightgreen;
+}
+
+.accordian__label{
+    display: block;
+    font-size: 1.6rem;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+    transition: background 0.5s;
+}
+.accordian__label::after{
+    content:" ";
+    position: absolute;
+    top:50%;
+    transform:translateY(-50%);
+    right:20px;
+    width:12px;
+    height:6px;
+    background-image: url('data:image/svg+xml,<svg height="50" width="100" xmlns="http://www.w3.org/2000/svg"><polygon points="0,0,100,0 50,50" style="color:black" /></svg>');
+    background-size: contain;
+    transition: transform 0.4s;
+}
+
+.accordian__content{
+    display: none;
+    font-size:x-large;
+    background: white;
+    font-size:1.3rem;
+    line-height: 1.6;
+}
+.accordian__input:checked~.accordian__content{
+    display: block;
+}
+
+.accordian__input:checked~.accordian__label::after{
+    transform: translateY(-50%) rotate(0.5turn);
+}
